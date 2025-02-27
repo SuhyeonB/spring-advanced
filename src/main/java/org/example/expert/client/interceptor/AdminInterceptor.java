@@ -19,7 +19,7 @@ public class AdminInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("preHandler");
+        log.info("preHandler");
         // 요청 전
         // HttpServletRequest를 사전처리 어드민 권한 여부 확인, 인증 되지 않은 사용자 접근 차단 (Filter에서 Jwt 검증)
         UserRole userRole = (request.getAttribute("userRole").equals("ADMIN")) ? UserRole.ADMIN : UserRole.USER;
