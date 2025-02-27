@@ -38,7 +38,7 @@ public class Advisor {
             log.info("요청 URL: {}", requestUrl);
         }
 
-        log.info("요청 본문: {}");
+        log.info("요청 본문: {}", joinPoint.getTarget());
 
         Object responseBody = joinPoint.proceed();
         log.info("응답 본문: {}", responseBody);
